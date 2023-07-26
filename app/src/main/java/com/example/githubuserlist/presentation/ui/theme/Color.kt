@@ -1,4 +1,4 @@
-package com.example.githubuserlist.ui.theme
+package com.example.githubuserlist.presentation.ui.theme
 
 import androidx.compose.ui.graphics.Color
 
