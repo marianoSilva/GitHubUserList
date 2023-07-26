@@ -1,6 +1,7 @@
-package com.example.githubuserlist.presentation.ui
+package com.example.githubuserlist.presentation
 
 
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -16,17 +17,18 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavController
 import coil.compose.AsyncImage
 
 @Composable
-fun UserListItem(user: com.example.githubuserlist.data.remote.domain.user.UserData){
+fun UserListItem(user: com.example.githubuserlist.data.remote.domain.user.UserData, navController: NavController){
     Card(
         modifier = Modifier
             .padding(horizontal = 8.dp, vertical = 8.dp)
             .fillMaxWidth(),
         shape = RoundedCornerShape(corner = CornerSize(16.dp)),
     ) {
-        Row() {
+        Row(Modifier.clickable { navController.navigate(Screen.DetailScreen.withArgs(user.login)) }) {
             UserImage(user.avatarUrl)
             Column(
                 modifier = Modifier

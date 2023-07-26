@@ -1,4 +1,4 @@
-package com.example.githubuserlist.presentation.ui
+package com.example.githubuserlist.presentation
 
 import com.example.githubuserlist.data.remote.domain.user.UserList
 
