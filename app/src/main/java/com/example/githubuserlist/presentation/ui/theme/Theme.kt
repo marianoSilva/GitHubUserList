@@ -1,4 +1,4 @@
-package com.example.githubuserlist.ui.theme
+package com.example.githubuserlist.presentation.ui.theme
 
 import android.app.Activity
 import android.os.Build
