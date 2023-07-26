@@ -7,4 +7,15 @@ data class UserData(
     val login: String,
     val reposUrl: String,
     val url: String
-)
+){
+    fun doesMatchSearchQuery(query: String): Boolean {
+        val matchingCombinations = listOf(
+            login,
+            "${login.first()}",
+        )
+
+        return matchingCombinations.any {
+            it.contains(query, ignoreCase = true)
+        }
+    }
+}
