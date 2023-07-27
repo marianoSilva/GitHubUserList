@@ -5,7 +5,7 @@ import com.google.gson.annotations.SerializedName
 
 data class UserDetailDto(
     @SerializedName("email")
-    val email: Any,
+    val email: String,
     @SerializedName("events_url")
     val eventsUrl: String,
     @SerializedName("followers")

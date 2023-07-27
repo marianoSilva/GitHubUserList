@@ -1,6 +1,8 @@
 package com.example.githubuserlist.di
 
+import com.example.githubuserlist.data.remote.domain.repository.DetailRepository
 import com.example.githubuserlist.data.remote.domain.repository.UserRepository
+import com.example.githubuserlist.data.repository.DetailRepositoryImpl
 import com.example.githubuserlist.data.repository.UserRepositoryImpl
 import dagger.Binds
 import dagger.Module
@@ -18,4 +20,10 @@ abstract class RepositoryModule {
     abstract fun bindUserRepository(
         userRepositoryImpl: UserRepositoryImpl
     ): UserRepository
+
+    @Binds
+    @Singleton
+    abstract fun bindDetailRepository(
+        detailRepositoryImpl: DetailRepositoryImpl
+    ): DetailRepository
 }
