@@ -22,9 +22,7 @@ class UserViewModel @Inject constructor(private val repository: UserRepository) 
     //Find users
     private val _searchText = MutableStateFlow("")
     val searchText = _searchText.asStateFlow()
-
-    private val _isSearching = MutableStateFlow(false)
-    val isSearching = _isSearching.asStateFlow()
+    
 
     var stateCache by mutableStateOf(UserState())
 
@@ -63,12 +61,20 @@ class UserViewModel @Inject constructor(private val repository: UserRepository) 
                 isLoading = true,
                 error = null
             )
-            if(text.isNotBlank()) {
+            state = if(text.isNotBlank()) {
                 val userList = stateCache.userList?.let { UserList(it.users.filter { it.doesMatchSearchQuery(text) }) }
-                state = state.copy(
-                    userList = userList
+                state.copy(
+                    userList = userList,
+                    isLoading = false,
+                    error = null
                 )
 
+            }else{
+                state.copy(
+                    userList = stateCache.userList,
+                    isLoading = false,
+                    error = null
+                )
             }
         }
     }

@@ -17,6 +17,8 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
@@ -32,7 +34,6 @@ fun NavHomeScreen(navController: NavController){
         viewModel.loadUserList()
     }
     val searchText by viewModel.searchText.collectAsState()
-    val isSearching by viewModel.isSearching.collectAsState()
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -45,7 +46,7 @@ fun NavHomeScreen(navController: NavController){
             placeholder = { Text(text = "Search") }
         )
         Spacer(modifier = Modifier.height(16.dp))
-        if(isSearching) {
+        if(viewModel.state.isLoading) {
             Box(modifier = Modifier.fillMaxSize()) {
                 CircularProgressIndicator(
                     modifier = Modifier.align(Alignment.Center)
@@ -53,6 +54,13 @@ fun NavHomeScreen(navController: NavController){
             }
         } else {
             UserListView(state = viewModel.state, navController)
+        }
+        viewModel.state.error?.let { error ->
+            Text(
+                text = error,
+                color = Color.Red,
+                textAlign = TextAlign.Center
+            )
         }
     }
 }
