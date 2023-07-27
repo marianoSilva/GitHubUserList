@@ -7,7 +7,7 @@ Lista de Usuários do GitHub, utilizando as APIs do GitHub(https://developer.git
 
 -Clone o projeto utilizando um cliente git ou o próprio Android Studio.(https://github.com/marianoSilva/GitHubUserList.git)  
 
--Aguarde o download das dependencias e indexação do projeto'  
+-Aguarde o download das dependencias e indexação do projeto  
 
 -Execute o projeto em um emulador ou dispositivo real através do Android Studio  
 
