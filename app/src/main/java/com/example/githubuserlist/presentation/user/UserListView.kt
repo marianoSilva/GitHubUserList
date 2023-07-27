@@ -1,4 +1,4 @@
-package com.example.githubuserlist.presentation
+package com.example.githubuserlist.presentation.user
 
 
 import androidx.compose.foundation.layout.PaddingValues

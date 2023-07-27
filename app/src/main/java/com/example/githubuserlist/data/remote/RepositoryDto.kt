@@ -7,8 +7,6 @@ data class RepositoryDto(
 
     @SerializedName("description")
     val description: String,
-    @SerializedName("html_url")
-    val htmlUrl: String,
     @SerializedName("name")
     val name: String,
 

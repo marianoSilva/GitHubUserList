@@ -1,4 +1,4 @@
-package com.example.githubuserlist.presentation
+package com.example.githubuserlist.presentation.user
 
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf

@@ -1,4 +1,4 @@
-package com.example.githubuserlist.presentation
+package com.example.githubuserlist.presentation.user
 
 
 import androidx.compose.foundation.clickable
@@ -19,6 +19,7 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import coil.compose.AsyncImage
+import com.example.githubuserlist.presentation.Screen
 
 @Composable
 fun UserListItem(user: com.example.githubuserlist.data.remote.domain.user.UserData, navController: NavController){

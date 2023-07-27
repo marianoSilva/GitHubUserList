@@ -20,6 +20,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
+import com.example.githubuserlist.presentation.user.UserListView
+import com.example.githubuserlist.presentation.user.UserViewModel
 
 
 @OptIn(ExperimentalMaterial3Api::class)
