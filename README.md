@@ -19,6 +19,14 @@ A arquitetura escolhida foi a MVI onde a view demonstra sua intenção a view mo
 
 ## CI
 
+Para build via terminal utilizar:
+
+Debug:  
+./gradlew clean app:assembleDebug  
+
+Release:  
+./gradlew clean app:assembleRelease
+
 O projeto roda esteiras de CI no Bitrise sempre que uma PR ou Merge são feitos para as Branchs principais (develop/master)  
 
 
